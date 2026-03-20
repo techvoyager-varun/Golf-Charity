@@ -1,23 +1,29 @@
-const { Resend } = require('resend');
+const nodemailer = require('nodemailer');
 
-const getResend = () => new Resend(process.env.RESEND_API_KEY);
+const createTransporter = () => {
+  return nodemailer.createTransport({
+    host: process.env.EMAIL_HOST,
+    port: process.env.EMAIL_PORT,
+    secure: true,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+};
 
 const sendEmail = async ({ to, subject, html }) => {
   try {
-    const resend = getResend();
-    const { data, error } = await resend.emails.send({
-      from: 'GolfCharity <onboarding@resend.dev>', // change to your domain once verified
+    const transporter = createTransporter();
+    await transporter.sendMail({
+      from: `"GolfCharity" <${process.env.EMAIL_USER}>`,
       to,
       subject,
       html,
     });
-    if (error) {
-      console.error(`Email error:`, error);
-    } else {
-      console.log(`Email sent to ${to} — ID: ${data.id}`);
-    }
-  } catch (err) {
-    console.error(`Email send failed: ${err.message}`);
+    console.log(`Email sent to ${to}`);
+  } catch (error) {
+    console.error(`Email error: ${error.message}`);
   }
 };
 
