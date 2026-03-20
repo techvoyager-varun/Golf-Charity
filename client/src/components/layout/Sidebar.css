@@ -1,6 +1,7 @@
 .sidebar {
   width: 260px;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
   background: var(--bg-dark);
   display: flex;
   flex-direction: column;
@@ -8,7 +9,8 @@
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 800;
+  z-index: 1000;
+  overflow-y: auto;
 }
 .sidebar__header {
   display: flex;
@@ -103,7 +105,7 @@
     right: 0;
     bottom: 0;
     background: rgba(0,0,0,0.5);
-    z-index: 799;
+    z-index: 999;
   }
 }
 
