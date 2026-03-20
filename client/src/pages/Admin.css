@@ -1,0 +1,367 @@
+/* Admin Layout */
+.admin {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-main);
+}
+.admin__main {
+  flex: 1;
+  margin-left: 260px;
+  padding: 48px;
+}
+.admin__loading { display: flex; flex-direction: column; gap: 16px; }
+
+/* Primary Stat */
+.admin-stat-primary {
+  margin-bottom: 40px;
+}
+.admin-stat-primary__label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+.admin-stat-primary__value {
+  font-size: clamp(64px, 6vw, 96px);
+  color: var(--text-primary);
+  line-height: 1;
+  display: block;
+}
+.admin-stat-primary__trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--accent-green);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* Stats Row */
+.admin-stats-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.admin-stat-secondary__value {
+  font-size: 48px;
+  color: var(--text-primary);
+  line-height: 1;
+  display: block;
+}
+.admin-stat-secondary__label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: block;
+}
+.admin-stats-sep {
+  width: 1px;
+  height: 40px;
+  background: var(--border-light);
+}
+
+/* Tertiary */
+.admin-tertiary { margin-bottom: 48px; }
+.admin-tertiary__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+/* Title */
+.admin-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.admin-title__count {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-left: 8px;
+}
+.admin-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 40px 0 16px;
+}
+
+/* Table Header */
+.admin-table-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+.admin-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+}
+.admin-search__input {
+  border: none;
+  border-bottom: 1px solid var(--border-light);
+  padding: 8px 0;
+  font-size: 14px;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: inherit;
+  width: 200px;
+}
+.admin-search__input:focus { border-bottom-color: var(--accent-gold); outline: none; }
+
+.admin-add-btn {
+  background: none;
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--transition-fast);
+}
+.admin-add-btn:hover { background: var(--accent-gold); color: var(--bg-dark); }
+
+/* Tables */
+.admin-table { width: 100%; }
+.admin-table__head {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.admin-table__row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr 1fr 1fr;
+  padding: 16px 0;
+  border-bottom: 1px solid #F0F0F0;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+}
+.admin-table__row:hover { background: var(--bg-primary); }
+.admin-table__name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.admin-table__date { color: var(--text-muted); font-size: 13px; }
+.admin-table__gold { color: var(--accent-gold); font-weight: 600; }
+
+.admin-table__actions {
+  opacity: 0;
+  transition: var(--transition-fast);
+}
+.admin-table__row:hover .admin-table__actions { opacity: 1; }
+
+.admin-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-dark);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.admin-action {
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-family: inherit;
+  transition: var(--transition-fast);
+}
+.admin-action--approve { color: var(--accent-gold); }
+.admin-action--delete { color: var(--status-error); }
+
+/* Draw Panel */
+.admin-draw-panel {
+  background: var(--bg-dark);
+  padding: 40px;
+  margin-bottom: 40px;
+}
+.admin-draw-panel__title {
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.admin-draw-controls {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.admin-draw-toggle {
+  display: flex;
+  background: rgba(255,255,255,0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.admin-draw-toggle__btn {
+  padding: 10px 24px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--transition-fast);
+}
+.admin-draw-toggle__btn.active {
+  background: var(--accent-gold);
+  color: var(--bg-dark);
+}
+
+.admin-draw-types { display: flex; gap: 0; }
+.admin-draw-type {
+  padding: 10px 24px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: rgba(255,255,255,0.5);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--transition-fast);
+}
+.admin-draw-type--active {
+  border-bottom-color: var(--accent-gold);
+  color: #fff;
+}
+
+.admin-draw-actions {
+  display: flex;
+  gap: 16px;
+}
+.admin-draw-btn {
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--transition-fast);
+}
+.admin-draw-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.admin-draw-btn--sim {
+  background: transparent;
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+}
+.admin-draw-btn--sim:hover:not(:disabled) { background: rgba(200,169,81,0.1); }
+.admin-draw-btn--pub {
+  background: var(--accent-gold);
+  color: var(--bg-dark);
+  border: none;
+  font-weight: 800;
+}
+
+.admin-draw-result {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.admin-draw-result__label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 16px;
+}
+.admin-draw-result__numbers {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.admin-draw-result__info {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Winner Verification */
+.admin-winner-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #F0F0F0;
+}
+.admin-winner-info { flex: 1; }
+.admin-winner-name { font-weight: 600; color: var(--text-primary); display: block; font-size: 15px; }
+.admin-winner-detail { font-size: 13px; color: var(--text-muted); }
+.admin-winner-proof {
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  background: var(--bg-secondary);
+}
+.admin-winner-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Reports */
+.admin-report-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-bottom: 40px;
+}
+.admin-report-card {
+  padding: 24px 0;
+  border-right: 1px solid var(--border-light);
+}
+.admin-report-card:last-child { border-right: none; }
+.admin-report-card__value {
+  font-size: 48px;
+  color: var(--text-primary);
+  display: block;
+  line-height: 1;
+}
+.admin-report-card__label {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .admin__main { margin-left: 0; padding: 24px 16px; }
+  .admin-table__head, .admin-table__row { grid-template-columns: 2fr 1fr 1fr 1fr; }
+  .admin-table__head span:nth-child(5), .admin-table__head span:nth-child(6),
+  .admin-table__row span:nth-child(5), .admin-table__row span:nth-child(6) { display: none; }
+  .admin-stats-row { flex-wrap: wrap; gap: 24px; }
+  .admin-report-grid { grid-template-columns: repeat(2, 1fr); }
+  .admin-draw-controls { flex-direction: column; }
+}

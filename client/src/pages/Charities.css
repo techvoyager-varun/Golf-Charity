@@ -1,0 +1,158 @@
+.charities-page { background: var(--bg-primary); }
+
+.charities-header {
+  background: var(--bg-dark);
+  padding: 140px 24px 60px;
+}
+.charities-header .container--wide {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.charities-header__title {
+  font-size: clamp(48px, 6vw, 80px);
+  color: #fff;
+}
+.charities-header__stat {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 36px;
+  color: var(--accent-gold);
+}
+.charities-header__stat span { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(255,255,255,0.5); display: block; font-weight: 400; }
+
+.charities-filter {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 32px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.charities-search {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+.charities-search__icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+.charities-search__input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border-light);
+  padding: 12px 0 12px 28px;
+  font-size: 15px;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: inherit;
+}
+.charities-search__input:focus { border-bottom-color: var(--accent-gold); outline: none; }
+
+.charities-categories {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.charities-cat {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition-fast);
+}
+.charities-cat:hover { color: var(--text-primary); }
+.charities-cat--active {
+  color: var(--accent-gold);
+  border-bottom-color: var(--accent-gold);
+}
+
+.charities-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.charity-row {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  border-bottom: 1px solid var(--border-light);
+}
+.charity-row--reverse { direction: rtl; }
+.charity-row--reverse > * { direction: ltr; }
+
+.charity-row__image { overflow: hidden; }
+.charity-row__image-inner {
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.2);
+  font-size: 120px;
+}
+
+.charity-row__content {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.charity-row__category {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent-gold);
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.charity-row__name {
+  font-size: clamp(28px, 3vw, 42px);
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+.charity-row__desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.charity-row__raised {
+  font-size: 28px;
+  color: var(--accent-gold);
+  margin-bottom: 16px;
+}
+.charity-row__raised span {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.charity-row__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-gold);
+  font-weight: 600;
+  font-size: 14px;
+  transition: var(--transition-fast);
+}
+.charity-row__link:hover { gap: 10px; }
+
+@media (max-width: 768px) {
+  .charities-header .container--wide { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .charity-row, .charity-row--reverse { grid-template-columns: 1fr; direction: ltr; }
+  .charity-row__image-inner { min-height: 200px; font-size: 80px; }
+  .charity-row__content { padding: 32px 24px; }
+}

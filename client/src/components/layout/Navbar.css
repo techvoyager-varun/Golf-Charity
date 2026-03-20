@@ -1,0 +1,110 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 900;
+  transition: var(--transition-normal);
+  background: transparent;
+}
+.navbar--solid {
+  background: rgba(18, 38, 32, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,169,81,0.2);
+}
+.navbar__inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar__logo {
+  font-size: 22px;
+  font-weight: 800;
+  display: flex;
+  gap: 0;
+  letter-spacing: -0.01em;
+}
+.navbar__logo-golf { color: #FFFFFF; }
+.navbar__logo-charity { color: var(--accent-gold); }
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.navbar__link {
+  color: rgba(255,255,255,0.75);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: var(--transition-fast);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.navbar__link:hover { color: var(--accent-gold); }
+.navbar__link--btn { padding: 0; }
+
+.navbar__cta {
+  background: var(--accent-gold);
+  color: var(--bg-dark);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  padding: 10px 24px;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+.navbar__cta:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.navbar__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.navbar__overlay {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar__hamburger { display: block; }
+  .navbar__links {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--bg-dark);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    z-index: 1000;
+  }
+  .navbar__links--open {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+  }
+  .navbar__links--open .navbar__link {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 32px;
+    color: #fff;
+  }
+  .navbar__links--open .navbar__cta {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 32px;
+    background: none;
+    color: var(--accent-gold);
+    padding: 0;
+  }
+}

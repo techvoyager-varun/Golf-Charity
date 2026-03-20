@@ -1,0 +1,7 @@
+/* App styles are distributed across component and page CSS files */
+.page-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,25 @@
+.badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.badge--active, .badge--approved, .badge--paid, .badge--published {
+  background: rgba(45,106,79,0.12);
+  color: var(--status-success);
+}
+.badge--pending, .badge--draft {
+  background: rgba(138,138,138,0.12);
+  color: var(--status-pending);
+}
+.badge--cancelled, .badge--rejected, .badge--lapsed {
+  background: rgba(192,57,43,0.12);
+  color: var(--status-error);
+}
+.badge--simulated, .badge--warning {
+  background: rgba(200,169,81,0.12);
+  color: var(--status-warning);
+}
