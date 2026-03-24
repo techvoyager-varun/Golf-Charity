@@ -1,10 +1,10 @@
-# 🏌️‍♂️ Golf Charity Subscription Platform
+#  Golf Charity Subscription Platform
 
 A modern, subscription-based web application that combines golf performance tracking, charitable giving, and a sophisticated monthly reward engine. Built as a full-stack MERN solution, this platform intentionally avoids traditional golf website clichés (plaid patterns, deep greens, generic fairways) in favor of an **emotion-driven, premium, and motion-enhanced aesthetic**.
 
 ---
 
-## 🎯 Core Features
+## Core Features
 
 ### 1. Subscription System
 - Secure integration with **Stripe** for monthly and yearly subscription plans.
@@ -34,7 +34,7 @@ A modern, subscription-based web application that combines golf performance trac
 
 ---
 
-## 💻 Tech Stack
+## Tech Stack
 
 - **Frontend:** React.js (Vite), React Router v6, Vanilla CSS (Custom Design System / Glassmorphism)
 - **Backend:** Node.js, Express.js
@@ -45,7 +45,7 @@ A modern, subscription-based web application that combines golf performance trac
 
 ---
 
-## 🚀 Setup & Installation
+## Setup & Installation
 
 ### Prerequisites
 - Node.js (v18+ recommended)
@@ -114,7 +114,7 @@ The client will start entirely at `http://localhost:5173`.
 
 ---
 
-## 🎨 UI/UX Design System
+## UI/UX Design System
 The UI adopts a highly modern "**Muted Luxury**" approach tailored to inspire charitable giving:
 - **Typography**: Heavy utilization of `font-display` utility classes for premium statistical displays.
 - **Variables**: Fully tokenized CSS variable architecture (`--brand-dark`, `--accent-gold`, etc.) allowing for immediate global theme switching.
